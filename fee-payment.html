@@ -1,115 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fee Payment - Hostel Management System</title>
     <link rel="stylesheet" href="styles/main.css">
 </head>
+
 <body>
-    <nav class="navbar">
-        <div class="nav-brand">
-            <h2>💰 Fee Payment</h2>
-        </div>
-        <div class="nav-actions">
-            <button onclick="navigateTo('dashboard.html')" class="back-btn">← Back to Dashboard</button>
-            <button onclick="logout()" class="logout-btn">Logout</button>
-        </div>
-    </nav>
-
-    <div class="container">
-        <div class="page-header">
-            <h1>Fee Payment Management</h1>
-            <button onclick="showPaymentModal()" class="primary-btn">Record Payment</button>
-        </div>
-
-        <div class="fee-summary">
-            <div class="summary-card">
-                <h3>Total Collected</h3>
-                <p class="amount">₹<span id="totalCollected">0</span></p>
+    <div class="model-bg-image">
+        <div class="model-bg-overlay"></div>
+        <nav class="navbar" style="position:relative;z-index:2;">
+            <div class="nav-brand">
+                <h2>💰 Fee Payment</h2>
             </div>
-            <div class="summary-card">
-                <h3>Pending Dues</h3>
-                <p class="amount pending">₹<span id="pendingDues">0</span></p>
+            <div class="nav-actions">
+                <button onclick="navigateTo('dashboard.html')" class="back-btn">← Back to Dashboard</button>
+                <button onclick="logout()" class="logout-btn">Logout</button>
             </div>
-            <div class="summary-card">
-                <h3>This Month</h3>
-                <p class="amount">₹<span id="thisMonth">0</span></p>
+        </nav>
+        <div class="container" style="position:relative;z-index:2;">
+            <div class="page-header">
+                <h1>Fee Payment Management</h1>
+                <button onclick="showPaymentModal()" class="primary-btn">Record Payment</button>
             </div>
-        </div>
 
-        <div class="filters">
-            <input type="text" id="searchStudent" placeholder="Search by student name or ID" onkeyup="filterPayments()">
-            <select id="statusFilter" onchange="filterPayments()">
+            <div class="fee-summary">
+                <div class="summary-card">
+                    <h3>Total Collected</h3>
+                    <p class="amount">₹<span id="totalCollected">0</span></p>
+                </div>
+                <div class="summary-card">
+                    <h3>Pending Dues</h3>
+                    <p class="amount pending">₹<span id="pendingDues">0</span></p>
+                </div>
+                <div class="summary-card">
+                    <h3>This Month</h3>
+                    <p class="amount">₹<span id="thisMonth">0</span></p>
+                </div>
+            </div>
+
+            <div class="filters">
+                <input type="text" id="searchStudent" placeholder="Search by student name or ID" onkeyup="filterPayments()">
+                <select id="statusFilter" onchange="filterPayments()">
                 <option value="">All Status</option>
                 <option value="paid">Paid</option>
                 <option value="pending">Pending</option>
                 <option value="overdue">Overdue</option>
             </select>
+            </div>
+
+            <div class="payments-table">
+                <table id="paymentsTable">
+                    <thead>
+                        <tr>
+                            <th>Student ID</th>
+                            <th>Student Name</th>
+                            <th>Fee Type</th>
+                            <th>Amount</th>
+                            <th>Due Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="paymentsTableBody">
+                        <!-- Populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
         </div>
 
-        <div class="payments-table">
-            <table id="paymentsTable">
-                <thead>
-                    <tr>
-                        <th>Student ID</th>
-                        <th>Student Name</th>
-                        <th>Fee Type</th>
-                        <th>Amount</th>
-                        <th>Due Date</th>
-                        <th>Status</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody id="paymentsTableBody">
-                    <!-- Populated by JavaScript -->
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <!-- Payment Modal -->
-    <div id="paymentModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('paymentModal')">&times;</span>
-            <h2>Record Payment</h2>
-            <form id="paymentForm">
-                <div class="form-group">
-                    <label for="paymentStudentId">Student:</label>
-                    <select id="paymentStudentId" required>
+        <!-- Payment Modal -->
+        <div id="paymentModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('paymentModal')">&times;</span>
+                <h2>Record Payment</h2>
+                <form id="paymentForm">
+                    <div class="form-group">
+                        <label for="paymentStudentId">Student:</label>
+                        <select id="paymentStudentId" required>
                         <!-- Populated by JavaScript -->
                     </select>
-                </div>
-                <div class="form-group">
-                    <label for="feeType">Fee Type:</label>
-                    <select id="feeType" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="feeType">Fee Type:</label>
+                        <select id="feeType" required>
                         <option value="hostel_rent">Hostel Rent</option>
                         <option value="mess_fee">Mess Fee</option>
                         <option value="security_deposit">Security Deposit</option>
                         <option value="maintenance">Maintenance</option>
                     </select>
-                </div>
-                <div class="form-group">
-                    <label for="amount">Amount:</label>
-                    <input type="number" id="amount" required min="0" step="0.01">
-                </div>
-                <div class="form-group">
-                    <label for="paymentMethod">Payment Method:</label>
-                    <select id="paymentMethod" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Amount:</label>
+                        <input type="number" id="amount" required min="0" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label for="paymentMethod">Payment Method:</label>
+                        <select id="paymentMethod" required>
                         <option value="cash">Cash</option>
                         <option value="online">Online</option>
                         <option value="cheque">Cheque</option>
                     </select>
-                </div>
-                <div class="form-group">
-                    <label for="paymentDate">Payment Date:</label>
-                    <input type="date" id="paymentDate" required>
-                </div>
-                <button type="submit" class="primary-btn">Record Payment</button>
-            </form>
+                    </div>
+                    <div class="form-group">
+                        <label for="paymentDate">Payment Date:</label>
+                        <input type="date" id="paymentDate" required>
+                    </div>
+                    <button type="submit" class="primary-btn">Record Payment</button>
+                </form>
+            </div>
         </div>
-    </div>
 
-    <script src="scripts/fee-payment.js"></script>
+        <script src="scripts/fee-payment.js"></script>
 </body>
+
 </html>

@@ -1,74 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Hostel Management System</title>
     <link rel="stylesheet" href="styles/main.css">
 </head>
+
 <body>
-    <nav class="navbar">
-        <div class="nav-brand">
-            <h2>🏠 Hostel Management</h2>
-        </div>
-        <div class="nav-user">
-            <span id="userWelcome">Welcome, User</span>
-            <button onclick="logout()" class="logout-btn">Logout</button>
-        </div>
-    </nav>
+    <div class="model-bg-image">
+        <div class="model-bg-overlay"></div>
+        <nav class="navbar" style="position:relative;z-index:2;">
+            <div class="nav-brand">
+                <h2>🏠 Hostel Management</h2>
+            </div>
+            <div class="nav-user">
+                <span id="userWelcome">Welcome, User</span>
+                <button onclick="logout()" class="logout-btn">Logout</button>
+            </div>
+        </nav>
+        <div class="container" style="position:relative;z-index:2;">
+            <div class="dashboard-grid">
+                <div class="dashboard-card" onclick="navigateTo('room-allocation.html')">
+                    <div class="card-icon">🏠</div>
+                    <h3>Room Allocation</h3>
+                    <p>Manage room assignments and availability</p>
+                </div>
 
-    <div class="container">
-        <div class="dashboard-grid">
-            <div class="dashboard-card" onclick="navigateTo('room-allocation.html')">
-                <div class="card-icon">🏠</div>
-                <h3>Room Allocation</h3>
-                <p>Manage room assignments and availability</p>
-            </div>
-            
-            <div class="dashboard-card" onclick="navigateTo('fee-payment.html')">
-                <div class="card-icon">💰</div>
-                <h3>Fee Payment</h3>
-                <p>Track payments and dues</p>
-            </div>
-            
-            <div class="dashboard-card" onclick="navigateTo('visitor-log.html')">
-                <div class="card-icon">👥</div>
-                <h3>Visitor Log</h3>
-                <p>Manage visitor entries and exits</p>
-            </div>
-            
-            <div class="dashboard-card" onclick="navigateTo('complaints.html')">
-                <div class="card-icon">📝</div>
-                <h3>Complaints</h3>
-                <p>Handle student complaints and issues</p>
-            </div>
-            
-            <div class="dashboard-card" onclick="navigateTo('student-management.html')">
-                <div class="card-icon">👨‍🎓</div>
-                <h3>Student Management</h3>
-                <p>Manage student information</p>
-            </div>
-            
-            <div class="dashboard-card" onclick="navigateTo('mess-management.html')">
-                <div class="card-icon">🍽️</div>
-                <h3>Mess Management</h3>
-                <p>Manage mess menu and attendance</p>
-            </div>
-            
-            <div class="dashboard-card admin-only" onclick="navigateTo('admin-dashboard.html')">
-                <div class="card-icon">📊</div>
-                <h3>Admin Dashboard</h3>
-                <p>View reports and statistics</p>
-            </div>
-            
-            <div class="dashboard-card" onclick="navigateTo('notifications.html')">
-                <div class="card-icon">🔔</div>
-                <h3>Notifications</h3>
-                <p>View alerts and announcements</p>
+                <div class="dashboard-card" onclick="navigateTo('fee-payment.html')">
+                    <div class="card-icon">💰</div>
+                    <h3>Fee Payment</h3>
+                    <p>Track payments and dues</p>
+                </div>
+
+                <div class="dashboard-card" onclick="navigateTo('visitor-log.html')">
+                    <div class="card-icon">👥</div>
+                    <h3>Visitor Log</h3>
+                    <p>Manage visitor entries and exits</p>
+                </div>
+
+                <div class="dashboard-card" onclick="navigateTo('complaints.html')">
+                    <div class="card-icon">📝</div>
+                    <h3>Complaints</h3>
+                    <p>Handle student complaints and issues</p>
+                </div>
+
+                <div class="dashboard-card" onclick="navigateTo('student-management.html')">
+                    <div class="card-icon">👨‍🎓</div>
+                    <h3>Student Management</h3>
+                    <p>Manage student information</p>
+                </div>
+
+                <div class="dashboard-card" onclick="navigateTo('mess-management.html')">
+                    <div class="card-icon">🍽️</div>
+                    <h3>Mess Management</h3>
+                    <p>Manage mess menu and attendance</p>
+                </div>
+
+                <div class="dashboard-card admin-only" onclick="navigateTo('admin-dashboard.html')">
+                    <div class="card-icon">📊</div>
+                    <h3>Admin Dashboard</h3>
+                    <p>View reports and statistics</p>
+                </div>
+
+                <div class="dashboard-card" onclick="navigateTo('notifications.html')">
+                    <div class="card-icon">🔔</div>
+                    <h3>Notifications</h3>
+                    <p>View alerts and announcements</p>
+                </div>
             </div>
         </div>
-    </div>
 
-    <script src="scripts/dashboard.js"></script>
+        <script src="scripts/dashboard.js"></script>
 </body>
+
 </html>

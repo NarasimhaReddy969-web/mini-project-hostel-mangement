@@ -1,75 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Room Allocation - Hostel Management System</title>
     <link rel="stylesheet" href="styles/main.css">
 </head>
+
 <body>
-    <nav class="navbar">
-        <div class="nav-brand">
-            <h2>🏠 Room Allocation</h2>
-        </div>
-        <div class="nav-actions">
-            <button onclick="navigateTo('dashboard.html')" class="back-btn">← Back to Dashboard</button>
-            <button onclick="logout()" class="logout-btn">Logout</button>
-        </div>
-    </nav>
+    <div class="model-bg-image">
+        <div class="model-bg-overlay"></div>
+        <nav class="navbar" style="position:relative;z-index:2;">
+            <div class="nav-brand">
+                <h2>🏠 Room Allocation</h2>
+            </div>
+            <div class="nav-actions">
+                <button onclick="navigateTo('dashboard.html')" class="back-btn">← Back to Dashboard</button>
+                <button onclick="logout()" class="logout-btn">Logout</button>
+            </div>
+        </nav>
+        <div class="container" style="position:relative;z-index:2;">
+            <div class="page-header">
+                <h1>Room Allocation Management</h1>
+                <button onclick="showAllocateRoomModal()" class="primary-btn">Allocate Room</button>
+            </div>
 
-    <div class="container">
-        <div class="page-header">
-            <h1>Room Allocation Management</h1>
-            <button onclick="showAllocateRoomModal()" class="primary-btn">Allocate Room</button>
-        </div>
-
-        <div class="filters">
-            <select id="floorFilter" onchange="filterRooms()">
+            <div class="filters">
+                <select id="floorFilter" onchange="filterRooms()">
                 <option value="">All Floors</option>
                 <option value="1">Floor 1</option>
                 <option value="2">Floor 2</option>
                 <option value="3">Floor 3</option>
             </select>
-            <select id="statusFilter" onchange="filterRooms()">
+                <select id="statusFilter" onchange="filterRooms()">
                 <option value="">All Status</option>
                 <option value="available">Available</option>
                 <option value="occupied">Occupied</option>
                 <option value="maintenance">Maintenance</option>
             </select>
+            </div>
+
+            <div class="rooms-grid" id="roomsGrid">
+                <!-- Rooms will be populated by JavaScript -->
+            </div>
         </div>
 
-        <div class="rooms-grid" id="roomsGrid">
-            <!-- Rooms will be populated by JavaScript -->
-        </div>
-    </div>
-
-    <!-- Allocate Room Modal -->
-    <div id="allocateRoomModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('allocateRoomModal')">&times;</span>
-            <h2>Allocate Room</h2>
-            <form id="allocateRoomForm">
-                <div class="form-group">
-                    <label for="roomNumber">Room Number:</label>
-                    <select id="roomNumber" required>
+        <!-- Allocate Room Modal -->
+        <div id="allocateRoomModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('allocateRoomModal')">&times;</span>
+                <h2>Allocate Room</h2>
+                <form id="allocateRoomForm">
+                    <div class="form-group">
+                        <label for="roomNumber">Room Number:</label>
+                        <select id="roomNumber" required>
                         <!-- Populated by JavaScript -->
                     </select>
-                </div>
-                <div class="form-group">
-                    <label for="studentId">Student ID:</label>
-                    <select id="studentId" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="studentId">Student ID:</label>
+                        <select id="studentId" required>
                         <!-- Populated by JavaScript -->
                     </select>
-                </div>
-                <div class="form-group">
-                    <label for="allocationDate">Allocation Date:</label>
-                    <input type="date" id="allocationDate" required>
-                </div>
-                <button type="submit" class="primary-btn">Allocate Room</button>
-            </form>
+                    </div>
+                    <div class="form-group">
+                        <label for="allocationDate">Allocation Date:</label>
+                        <input type="date" id="allocationDate" required>
+                    </div>
+                    <button type="submit" class="primary-btn">Allocate Room</button>
+                </form>
+            </div>
         </div>
-    </div>
 
-    <script src="scripts/room-allocation.js"></script>
+        <script src="scripts/room-allocation.js"></script>
 </body>
+
 </html>
