@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaints - Hostel Management System</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <h2>📝 Complaints</h2>
+        </div>
+        <div class="nav-actions">
+            <button onclick="navigateTo('dashboard.html')" class="back-btn">← Back to Dashboard</button>
+            <button onclick="logout()" class="logout-btn">Logout</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Complaint Management</h1>
+            <button onclick="showComplaintModal()" class="primary-btn">Register Complaint</button>
+        </div>
+
+        <div class="complaint-stats">
+            <div class="stat-card">
+                <h3>Total Complaints</h3>
+                <p class="stat-number" id="totalComplaints">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Pending</h3>
+                <p class="stat-number pending" id="pendingComplaints">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Resolved</h3>
+                <p class="stat-number resolved" id="resolvedComplaints">0</p>
+            </div>
+        </div>
+
+        <div class="filters">
+            <select id="categoryFilter" onchange="filterComplaints()">
+                <option value="">All Categories</option>
+                <option value="room">Room Issues</option>
+                <option value="mess">Mess Issues</option>
+                <option value="maintenance">Maintenance</option>
+                <option value="security">Security</option>
+                <option value="other">Other</option>
+            </select>
+            <select id="statusFilter" onchange="filterComplaints()">
+                <option value="">All Status</option>
+                <option value="pending">Pending</option>
+                <option value="in-progress">In Progress</option>
+                <option value="resolved">Resolved</option>
+            </select>
+            <select id="priorityFilter" onchange="filterComplaints()">
+                <option value="">All Priority</option>
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select>
+        </div>
+
+        <div class="complaints-grid" id="complaintsGrid">
+            <!-- Complaints will be populated by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Complaint Registration Modal -->
+    <div id="complaintModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('complaintModal')">&times;</span>
+            <h2>Register Complaint</h2>
+            <form id="complaintForm">
+                <div class="form-group">
+                    <label for="complaintCategory">Category:</label>
+                    <select id="complaintCategory" required>
+                        <option value="room">Room Issues</option>
+                        <option value="mess">Mess Issues</option>
+                        <option value="maintenance">Maintenance</option>
+                        <option value="security">Security</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="priority">Priority:</label>
+                    <select id="priority" required>
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="complaintTitle">Title:</label>
+                    <input type="text" id="complaintTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="complaintDescription">Description:</label>
+                    <textarea id="complaintDescription" required rows="4"></textarea>
+                </div>
+                <button type="submit" class="primary-btn">Submit Complaint</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Complaint Details Modal -->
+    <div id="complaintDetailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('complaintDetailsModal')">&times;</span>
+            <div id="complaintDetailsContent">
+                <!-- Populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/complaints.js"></script>
+</body>
+</html>

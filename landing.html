@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HostelHub - Modern Hostel Management System</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body class="dark-theme">
+    <!-- Navigation -->
+    <!-- Updated navigation with dark theme and cyan accents -->
+    <nav class="landing-nav dark-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="logo-icon">🏠</div>
+                <span class="brand-text">HostelHub</span>
+            </div>
+            <div class="nav-links">
+                <a href="room-allocation.html" class="nav-link">
+                    <span class="nav-icon">🏠</span> Room Allocation
+                </a>
+                <a href="fee-payment.html" class="nav-link">
+                    <span class="nav-icon">💰</span> Fee Payment
+                </a>
+                <a href="visitor-log.html" class="nav-link">
+                    <span class="nav-icon">👥</span> Visitor Log
+                </a>
+                <a href="complaints.html" class="nav-link">
+                    <span class="nav-icon">📝</span> Complaints
+                </a>
+                <a href="mess-management.html" class="nav-link">
+                    <span class="nav-icon">🍽️</span> Mess Management
+                </a>
+                <a href="student-management.html" class="nav-link">
+                    <span class="nav-icon">👨‍🎓</span> Student Management
+                </a>
+                <a href="admin-dashboard.html" class="nav-link">
+                    <span class="nav-icon">📊</span> Admin Dashboard
+                </a>
+                <a href="notifications.html" class="nav-link">
+                    <span class="nav-icon">🔔</span> Notifications
+                </a>
+                <a href="index.html" class="nav-link nav-link-accent">Sign In</a>
+                <a href="signup.html" class="join-btn nav-join-btn">Join Room</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <!-- Redesigned hero with dark theme, gradient text, and centered layout -->
+    <section class="hero dark-hero">
+        <div class="hero-background">
+            <div class="grid-pattern"></div>
+            <div class="floating-elements">
+                <div class="floating-element"></div>
+                <div class="floating-element"></div>
+                <div class="floating-element"></div>
+            </div>
+        </div>
+
+        <div class="hero-content">
+            <div class="status-indicator">
+                <div class="status-dot"></div>
+                <span>1,247 students online now</span>
+            </div>
+
+            <div class="hero-text">
+                <h1 class="hero-title gradient-text">
+                    Secure Hostel
+                    <span class="gradient-highlight">Management</span> System
+                </h1>
+                <p class="hero-description">
+                    End-to-end encrypted hostel operations with military-grade security, real-time tracking, and advanced management features. No complex setup required.
+                </p>
+            </div>
+
+            <div class="hero-action">
+                <div class="input-group">
+                    <input type="text" placeholder="Enter hostel code (e.g., HST2024MGT789)" class="hero-input">
+                    <button class="join-button">
+                        <span>→</span>
+                        Join Hostel
+                    </button>
+                </div>
+                <p class="input-help">Hostel codes are 16-character alphanumeric strings</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <!-- Updated features with dark theme and modern card design -->
+    <section id="features" class="features dark-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Powerful Features</h2>
+                <p class="section-subtitle">Everything you need to manage your hostel securely</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card dark-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon cyan-glow">🏠</div>
+                    <h3>Room Management</h3>
+                    <p>Encrypted room allocation with real-time availability and secure access control.</p>
+                </div>
+                <div class="feature-card dark-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon cyan-glow">💰</div>
+                    <h3>Secure Payments</h3>
+                    <p>Military-grade encrypted payment processing with anonymous transaction tracking.</p>
+                </div>
+                <div class="feature-card dark-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon cyan-glow">👥</div>
+                    <h3>Anonymous Visitors</h3>
+                    <p>Secure visitor management with encrypted logs and self-destructing records.</p>
+                </div>
+                <div class="feature-card dark-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon cyan-glow">📝</div>
+                    <h3>Private Complaints</h3>
+                    <p>End-to-end encrypted complaint system with anonymous reporting capabilities.</p>
+                </div>
+                <div class="feature-card dark-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-icon cyan-glow">🍽️</div>
+                    <h3>Mess Security</h3>
+                    <p>Secure mess operations with encrypted meal planning and attendance tracking.</p>
+                </div>
+                <div class="feature-card dark-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="feature-icon cyan-glow">📊</div>
+                    <h3>Encrypted Analytics</h3>
+                    <p>Advanced analytics with zero-knowledge architecture and private reporting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <!-- Updated about section with dark theme -->
+    <section id="about" class="about dark-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Built for Security & Privacy</h2>
+                    <p>HostelHub prioritizes student privacy and data security above all else. Our platform uses advanced encryption and anonymous communication protocols to protect sensitive information.</p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <div class="feature-check cyan-check">✓</div>
+                            <span>End-to-end encryption</span>
+                        </div>
+                        <div class="about-feature">
+                            <div class="feature-check cyan-check">✓</div>
+                            <span>Zero-knowledge architecture</span>
+                        </div>
+                        <div class="about-feature">
+                            <div class="feature-check cyan-check">✓</div>
+                            <span>Anonymous communication</span>
+                        </div>
+                        <div class="about-feature">
+                            <div class="feature-check cyan-check">✓</div>
+                            <span>Self-destructing messages</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="security-visualization">
+                        <div class="security-layer"></div>
+                        <div class="security-layer"></div>
+                        <div class="security-layer"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <!-- Updated CTA with dark theme and cyan accents -->
+    <section class="cta-section dark-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready for Secure Hostel Management?</h2>
+                <p>Join thousands of institutions protecting their students' privacy with HostelHub.</p>
+                <div class="cta-buttons">
+                    <a href="signup.html" class="cta-primary cyan-btn">Start Secure Trial</a>
+                    <a href="#contact" class="cta-secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Updated footer with dark theme -->
+    <footer class="footer dark-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo-icon">🏠</div>
+                    <span class="brand-text">HostelHub</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#features">Features</a>
+                    <a href="#about">How It Works</a>
+                    <a href="#contact">Contact</a>
+                    <a href="index.html">Sign In</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 HostelHub. Secure by design.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/landing.js"></script>
+</body>
+
+</html>

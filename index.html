@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HostelHub - Secure Login</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+    <!-- Enhanced login container with dark theme and animations -->
+    <div class="login-container">
+        <div class="login-background">
+            <div class="grid-pattern"></div>
+            <div class="floating-elements">
+                <div class="floating-element"></div>
+                <div class="floating-element"></div>
+                <div class="floating-element"></div>
+            </div>
+        </div>
+        
+        <div class="login-card cyber-border fade-in">
+            <div class="logo">
+                <div class="logo-icon floating-animation">🏠</div>
+                <h1 class="text-gradient">HostelHub</h1>
+                <p class="login-subtitle">Secure Hostel Management System</p>
+            </div>
+            
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="userType">Login as:</label>
+                    <select id="userType" required class="hover-glow">
+                        <option value="">Select User Type</option>
+                        <option value="admin">Admin</option>
+                        <option value="warden">Warden</option>
+                        <option value="student">Student</option>
+                        <option value="security">Security Staff</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" required placeholder="Enter username" class="hover-glow">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" required placeholder="Enter password" class="hover-glow">
+                </div>
+                <button type="submit" class="login-btn">
+                    <span>🔐</span>
+                    Secure Login
+                </button>
+            </form>
+            
+            <div class="demo-credentials cyber-border">
+                <h3>🔑 Demo Credentials:</h3>
+                <div class="credentials-grid">
+                    <div class="credential-item">
+                        <strong>Admin:</strong> admin / admin123
+                    </div>
+                    <div class="credential-item">
+                        <strong>Student:</strong> student / student123
+                    </div>
+                    <div class="credential-item">
+                        <strong>Warden:</strong> warden / warden123
+                    </div>
+                    <div class="credential-item">
+                        <strong>Security:</strong> security / security123
+                    </div>
+                </div>
+            </div>
+            
+            <div class="auth-footer">
+                <p>New to HostelHub? <a href="signup.html" class="auth-link">Create Account</a></p>
+                <p><a href="landing.html" class="auth-link">← Back to Home</a></p>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/auth.js"></script>
+</body>
+</html>
